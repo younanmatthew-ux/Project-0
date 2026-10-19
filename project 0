@@ -1,0 +1,89 @@
+import java.util.Scanner;
+
+public class TextAdventureGame {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        String command;
+        boolean gameRunning = true;
+        int turns = 0;
+
+        System.out.println("Welcome to the Adventure Game!");
+        System.out.println("You are trapped in a mysterious dungeon.");
+        System.out.println("Type help to see your choices.");
+
+        while (gameRunning) {
+            System.out.println();
+            System.out.print("What do you want to do? ");
+            command = input.nextLine();
+
+            if (command.equalsIgnoreCase("help")) {
+                System.out.println("Available commands:");
+                System.out.println("Look");
+                System.out.println("Take");
+                System.out.println("Open");
+                System.out.println("Inventory");
+                System.out.println("Go North");
+                System.out.println("Go South");
+                System.out.println("Go East");
+                System.out.println("Go West");
+                System.out.println("Sleep");
+            }
+            else {
+                turns++;
+
+                if (command.equalsIgnoreCase("zangetsu")) {
+                    System.out.println("A secret passage opens!");
+                    System.out.println("You escape the dungeon!");
+                    gameRunning = false;
+                }
+                else if (command.equalsIgnoreCase("look")) {
+                    System.out.println("You see a dark dungeon with stone walls.");
+                }
+                else if (command.equalsIgnoreCase("take")) {
+                    System.out.println("You pick up an old rusty key.");
+                }
+                else if (command.equalsIgnoreCase("open")) {
+                    System.out.println("You try to open a heavy wooden door.");
+                }
+                else if (command.equalsIgnoreCase("inventory")) {
+                    System.out.println("You are carrying a rusty key.");
+                }
+                else if (command.equalsIgnoreCase("go north")) {
+                    System.out.println("You walk north through a dark hallway.");
+                }
+                else if (command.equalsIgnoreCase("go south")) {
+                    System.out.println("You walk south toward a stone wall.");
+                }
+                else if (command.equalsIgnoreCase("go east")) {
+                    System.out.println("You walk east into a cold room.");
+                }
+                else if (command.equalsIgnoreCase("go west")) {
+                    System.out.println("You walk west past an old doorway.");
+                }
+                else if (command.equalsIgnoreCase("sleep")) {
+                    System.out.println("You fall asleep for a few minutes.");
+                }
+                else {
+                    System.out.println("Command not recognized.");
+                    System.out.println("Available commands:");
+                    System.out.println("Look");
+                    System.out.println("Take");
+                    System.out.println("Open");
+                    System.out.println("Inventory");
+                    System.out.println("Go North");
+                    System.out.println("Go South");
+                    System.out.println("Go East");
+                    System.out.println("Go West");
+                    System.out.println("Sleep");
+                    System.out.println("Type help to see these choices again.");
+                }
+            }
+        }
+
+        System.out.println("Total turns: " + turns);
+        System.out.println("Thanks for playing!");
+
+        input.close();
+    }
+}
